@@ -147,14 +147,6 @@ a { color: inherit; }
 .cz-panel .cz-form { margin: 0; padding: 4px 22px 22px; }
 .cz-two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .cz-search { grid-template-columns: 1fr auto; align-items: center; }
-.cz-demo { margin-top: 26px; padding-top: 20px; border-top: 1px dashed var(--line); display: grid; gap: 8px; }
-.cz-demo-title { font-size: 12px; font-weight: 650; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 2px; }
-.cz-demo-user { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 14px; background: #fff; cursor: pointer; text-align: left; color: var(--ink); transition: border-color .2s, background .2s; }
-.cz-demo-user:hover { border-color: var(--coral); background: #fff7f5; }
-.cz-demo-user > span:nth-child(2) { flex: 1; min-width: 0; }
-.cz-demo-user strong, .cz-demo-user small { display: block; }
-.cz-demo-user small { color: var(--muted); font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.cz-demo-user em { font-style: normal; font-size: 11px; font-weight: 700; color: var(--coral); background: #fde9e6; padding: 3px 9px; border-radius: 999px; }
 .cz-avatar { display: grid; place-items: center; flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; color: #fff; font-weight: 700; background: linear-gradient(135deg, var(--orange), var(--coral)); }
 .cz-avatar.admin { background: linear-gradient(135deg, var(--plum-2), var(--wine)); }
 .cz-switch { margin-top: 22px; font-size: 14px; color: var(--muted); text-align: center; }

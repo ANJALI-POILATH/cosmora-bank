@@ -2,14 +2,8 @@ import { useState } from 'react';
 import { Alert, Button, MenuItem, Step, StepLabel, Stepper, TextField } from '@mui/material';
 import { ArrowLeft, FileUp, KeyRound, Search, ShieldCheck, UserRound, X } from 'lucide-react';
 import { toPaise } from '../amount';
-import { ADMIN_EMAIL, MIN_OPENING_MINOR, portal, usePortal } from './store';
+import { MIN_OPENING_MINOR, portal, usePortal } from './store';
 import { GlassCard, Logo, Pill, money, time } from './ui';
-
-const demoUsers = [
-  { role: 'Admin', name: 'Cosmora Admin', email: ADMIN_EMAIL, password: 'CHANGE_ME' },
-  { role: 'Customer', name: 'Aria Nova', email: 'aria@cosmora.bank', password: 'CHANGE_ME', account: 'P62500000002' },
-  { role: 'Customer', name: 'Leo Orion', email: 'leo@cosmora.bank', password: 'CHANGE_ME', account: 'P62500000003' },
-];
 
 function Shell({ go, children, aside }) {
   return <div className="cz-auth">
@@ -50,15 +44,6 @@ export function Login({ go, signIn }) {
       {error && <Alert severity="error">{error}</Alert>}
       <Button type="submit" variant="contained" size="large" disabled={busy} startIcon={<KeyRound size={17} />}>{busy ? 'Signing in…' : 'Sign in'}</Button>
     </form>
-    <div className="cz-demo">
-      <span className="cz-demo-title">Demo accounts · click to fill in</span>
-      {demoUsers.map(user => <button type="button" key={user.email} className="cz-demo-user"
-        onClick={() => { setEmail(user.email); setPassword(user.password); setError(''); }}>
-        <span className={'cz-avatar ' + (user.role === 'Admin' ? 'admin' : '')}>{user.role === 'Admin' ? <ShieldCheck size={16} /> : user.name[0]}</span>
-        <span><strong>{user.name}</strong><small>{user.email}{user.account ? ' · ' + user.account : ''}</small></span>
-        <em>{user.role}</em>
-      </button>)}
-    </div>
     <p className="cz-switch">New to Cosmora? <button type="button" onClick={() => go('register')}>Open an account</button>
       {' · '}<button type="button" onClick={() => go('status')}>Track an application</button></p>
   </Shell>;
